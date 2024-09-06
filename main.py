@@ -1,9 +1,9 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-model_name = "Salesforce/codet5-base"  # Available model for text/code generation
-token = "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"  # Assuming you need the token for authentication
-tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=token)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name, use_auth_token=token)
+# Use the valid model from Hugging Face
+model_name = "cssupport/t5-small-awesome-text-to-sql"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 
 def natural_language_to_sql(query, model, tokenizer, max_length=128):
