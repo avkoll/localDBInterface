@@ -2,5 +2,7 @@
 <project version="4">
   <component name="RuffConfigService">
     <option name="globalRuffExecutablePath" value="C:\Users\avkol\AppData\Local\Programs\Python\Python312\Scripts\ruff.exe" />
+    <option name="projectRuffExecutablePath" value="C:\Users\avkol\PycharmProjects\localDBInterface\.venv\Scripts\ruff.exe" />
+    <option name="runRuffOnSave" value="true" />
   </component>
 </project>
