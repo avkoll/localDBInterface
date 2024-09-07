@@ -2,7 +2,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 # Load the fine-tuned model and tokenizer
 model = AutoModelForSeq2SeqLM.from_pretrained("./fine_tuned_text_to_sql_model")
-tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_text_to_sql_model")
+tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_text_to_sql_model", use_fast=True)
 
 
 def natural_language_to_sql(query, model, tokenizer, max_length=128):

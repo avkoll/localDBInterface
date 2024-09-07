@@ -1,0 +1,12 @@
+transaction = [
+        "transaction_id",
+        "transaction_amount",
+        "transaction_date",
+        "transaction_type",
+        "transaction_status",
+        "transaction_description",
+        "transaction_source_account",
+        "transaction_destination_account",
+        "transaction_currency",
+        "transaction_fee"
+    ]
