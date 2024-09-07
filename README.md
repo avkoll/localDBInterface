@@ -1,5 +1,6 @@
 The goal of this project is to create a NL2SQL LLM that can talk to a sql database. It will elminate the need to learn to write in SQL. 
-This will of course be more complicated than I think, but I want this to follow \  
+This will of course be more complicated than I think, but I want this to follow the architecture below but replace the 
+GPT stuff with local models. 
 ![Architecture](static/Architecture%202.png)
 
 CUDA 11.8
