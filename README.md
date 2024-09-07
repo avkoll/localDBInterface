@@ -1,7 +1,9 @@
-I am attempting to train an llm to convert natural language to sql statements. 
-The goal is to get everything to be able to run without an internet connection.
-This is my first project with pytorch so it is messy and reqs are all over the place.
-
+The goal of this project is to create a NL2SQL LLM that 
 
 
 CUDA 11.8
+
+# Models
+### tscholak/cxmefzzi
+This model is the T5-3B trained on the spider database and is fin tuned to be used something called PICARD \
+I want to use this model and fine tune it on whatever database I will be 'talking' to. 

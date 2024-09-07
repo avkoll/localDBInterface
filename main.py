@@ -1,8 +1,9 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-# Load the fine-tuned model and tokenizer
-model = AutoModelForSeq2SeqLM.from_pretrained("./fine_tuned_text_to_sql_model")
-tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_text_to_sql_model", use_fast=True)
+# Load the pre-trained model and tokenizer from Hugging Face
+model_name = "tscholak/cxmefzzi"
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 
 def natural_language_to_sql(query, model, tokenizer, max_length=128):
@@ -36,7 +37,6 @@ def natural_language_to_sql(query, model, tokenizer, max_length=128):
 
 # Example usage
 nl_query = input("Enter a natural language query: ")
-# Call the function and print the SQL query
 sql_query = natural_language_to_sql(nl_query, model, tokenizer)
 
 if sql_query:
