@@ -5,6 +5,10 @@ model_name = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 model = AutoModelForCausalLM.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
+# Add a custom PAD token if none exists
+if tokenizer.pad_token is None:
+    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+    model.resize_token_embeddings(len(tokenizer))  # Resize model embeddings to account for the new token
 
 def natural_language_to_sql(query, model, tokenizer, max_length=128):
     """
