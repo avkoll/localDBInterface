@@ -21,11 +21,15 @@ def natural_language_to_sql(query, model, tokenizer, max_length=128):
     """
     try:
         # Tokenize the input query
-        inputs = tokenizer.encode(query, return_tensors="pt", truncation=True, max_length=max_length)
-        print(f"Tokenized input: {inputs}")
+        inputs = tokenizer.encode_plus(query, return_tensors="pt", truncation=True, max_length=max_length, padding='max_length')
+        input_ids = inputs['input_ids']
+        attention_mask = inputs['attention_mask']
 
-        # Generate the SQL query using the model
-        outputs = model.generate(inputs, max_length=max_length, num_beams=6, early_stopping=True)
+        print(f"Tokenized input: {input_ids}")
+        print(f"Attention mask: {attention_mask}")
+
+        # Generate the SQL query using the model, passing the attention_mask as well
+        outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=max_length, num_beams=6, early_stopping=True)
         print(f"Model raw output: {outputs}")
 
         # Decode the generated SQL query
