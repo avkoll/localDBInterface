@@ -1,7 +1,5 @@
-I am attempting to train an llm to convert natural language to sql statements. 
-The goal is to get everything to be able to run without an internet connection.
-This is my first project with pytorch so it is messy and reqs are all over the place.
-
-
+NL2SQL app. This is meant to convert natural language to sql using llms that run locally with llama.cpp.
+There are multiple LLMs that generate, verify, and compare with the database schema to make sure the generated SQL is valid and would work on the target database.
+Each LLM runs in its own docker container and interacts with a flask API to send and receive prompts and responses.
 
 CUDA 11.8
